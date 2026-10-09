@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#f7fbff">
+	<meta name="description" content="Safely é uma plataforma desenvolvida para apoiar o registro e o acompanhamento de relatos de bullying nas Etecs, com cuidado, organização e empatia.">
+	<title>Safely — acolhimento que aproxima</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						ink: '#10253f',
+						ocean: '#0284C7',
+						aqua: '#17c5c8',
+						violet: '#6B21A8',
+						paper: '#f7fbff'
+					},
+					fontFamily: {
+						sans: ['DM Sans', 'sans-serif'],
+						display: ['Manrope', 'sans-serif']
+					}
+				}
+			}
+		};
+	</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<script src="https://unpkg.com/lucide@latest"></script>
+	<style>
+		:root { color-scheme: light; }
+		* { box-sizing: border-box; }
+		body { margin: 0; font-family: 'DM Sans', sans-serif; color: #10253f; background: #f7fbff; }
+		h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+		.site-header { background: rgba(255,255,255,.9); backdrop-filter: blur(16px); }
+		.hero-wash { background: radial-gradient(ellipse at 78% 36%, rgba(23,197,200,.18), transparent 34%), radial-gradient(ellipse at 95% 8%, rgba(113,52,189,.12), transparent 29%), linear-gradient(180deg,#fff 0%,#f4faff 100%); }
+		.dot-grid { background-image: radial-gradient(rgba(20,103,213,.16) .8px, transparent .8px); background-size: 18px 18px; }
+		.reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+		.reveal.is-visible { opacity: 1; transform: translateY(0); }
+		.feature-card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+		.feature-card:hover { transform: translateY(-5px); box-shadow: 0 20px 42px rgba(16,37,63,.09); border-color: rgba(20,103,213,.24); }
+		.team-card { transition: transform .25s ease, box-shadow .25s ease; }
+		.team-card:hover { transform: translateY(-4px); box-shadow: 0 18px 38px rgba(16,37,63,.1); }
+		.focus-ring:focus-visible { outline: 3px solid rgba(23,197,200,.75); outline-offset: 3px; }
+		@media (prefers-reduced-motion: reduce) {
+			*, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+			.reveal { opacity: 1; transform: none; }
+		}
+	</style>
+</head>
+<body class="antialiased">
+	<header class="site-header fixed inset-x-0 top-0 z-50 border-b border-slate-200/70">
+		<nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8" aria-label="Navegação principal">
+			<a class="focus-ring flex shrink-0 items-center gap-2 rounded-xl" href="#inicio" aria-label="Safely, início">
+				<span class="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-white ring-1 ring-slate-200">
+					<img src="img/Logo_Safely.png" alt="Logo Safely" class="h-full w-full object-contain">
+				</span>
+				<span class="hidden h-9 w-9 items-center justify-center sm:flex">
+					<img src="img/Logo_Protecht.png" alt="Logo Protecht" class="h-9 w-9 object-contain">
+				</span>
+				<span class="font-display text-lg font-extrabold tracking-tight text-ink">safely<span class="text-ocean">.</span></span>
+			</a>
+
+			<button id="menu-toggle" class="focus-ring flex h-11 w-11 items-center justify-center rounded-xl text-ink hover:bg-slate-100 md:hidden" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+				<i data-lucide="menu" class="h-5 w-5"></i>
+			</button>
+
+			<div id="nav-links" class="absolute left-0 right-0 top-full hidden border-b border-slate-200 bg-white px-5 pb-5 pt-2 shadow-lg md:static md:flex md:items-center md:gap-7 md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+				<a class="nav-link block rounded-lg py-2 text-sm font-semibold text-slate-600 hover:text-ocean md:py-0" href="#inicio">Início</a>
+				<a class="nav-link block rounded-lg py-2 text-sm font-semibold text-slate-600 hover:text-ocean md:py-0" href="#sobre">Sobre o Safely</a>
+				<a class="nav-link block rounded-lg py-2 text-sm font-semibold text-slate-600 hover:text-ocean md:py-0" href="#funcionalidades">Funcionalidades</a>
+				<a class="nav-link block rounded-lg py-2 text-sm font-semibold text-slate-600 hover:text-ocean md:py-0" href="#equipe">Quem Somos</a>
+				<a class="nav-link block rounded-lg py-2 text-sm font-semibold text-slate-600 hover:text-ocean md:py-0" href="#contato">Contato</a>
+				<a class="focus-ring mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-bold text-white transition hover:bg-ocean md:mt-0" href="#sobre">Conheça o Safely <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<section id="inicio" class="hero-wash relative overflow-hidden px-5 pb-20 pt-32 sm:px-8 sm:pb-28 sm:pt-40">
+			<div class="dot-grid pointer-events-none absolute -right-24 top-28 h-72 w-72 rounded-full opacity-50" aria-hidden="true"></div>
+			<div class="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.02fr_.98fr] lg:gap-16">
+				<div class="reveal">
+					<div class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/80 px-3.5 py-2 text-xs font-bold uppercase tracking-wide text-ocean shadow-sm">
+						<span class="h-2 w-2 rounded-full bg-aqua"></span> Cuidado e escuta no ambiente escolar
+					</div>
+					<h1 class="max-w-3xl text-4xl font-extrabold leading-[1.12] text-ink sm:text-5xl lg:text-[3.65rem]">Toda pessoa merece ser <span class="text-ocean">ouvida com cuidado.</span></h1>
+					<p class="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">Safely aproxima estudantes e equipe escolar para registrar e acompanhar situações de bullying nas Etecs, com mais organização, empatia e agilidade.</p>
+					<div class="mt-8 flex flex-col gap-3 sm:flex-row">
+						<a class="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ocean px-6 py-3 text-sm font-bold text-white shadow-lg shadow-blue-900/15 transition hover:-translate-y-0.5 hover:bg-blue-700" href="#funcionalidades">Ver funcionalidades <i data-lucide="arrow-down" class="h-4 w-4"></i></a>
+						<a class="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-slate-300 bg-white/75 px-6 py-3 text-sm font-bold text-ink transition hover:border-violet hover:text-violet" href="#contato">Fale com a equipe <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+					</div>
+					<div class="mt-9 flex items-center gap-3 text-sm text-slate-500">
+						<span class="flex -space-x-2" aria-hidden="true"><span class="h-8 w-8 rounded-full border-2 border-white bg-blue-100"></span><span class="h-8 w-8 rounded-full border-2 border-white bg-cyan-100"></span><span class="h-8 w-8 rounded-full border-2 border-white bg-violet-100"></span></span>
+						<span>Uma iniciativa da <strong class="font-bold text-ink">Protecht</strong> para a comunidade Etec</span>
+					</div>
+				</div>
+
+				<div class="reveal relative mx-auto w-full max-w-xl" style="transition-delay: 120ms">
+					<div class="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-cyan-100 via-blue-100 to-violet-100 blur-2xl" aria-hidden="true"></div>
+					<div class="relative overflow-hidden rounded-[1.8rem] border border-white bg-white p-5 shadow-2xl shadow-blue-950/10 sm:p-7">
+						<div class="flex items-center justify-between border-b border-slate-100 pb-4">
+							<div class="flex items-center gap-3">
+								<img src="img/Logo_Safely.png" alt="" class="h-12 w-12 rounded-xl object-contain ring-1 ring-slate-100">
+								<div><p class="font-display text-sm font-extrabold text-ink">Safely</p><p class="text-xs text-slate-500">Escuta que acolhe</p></div>
+							</div>
+							<span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-bold text-emerald-700"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> Ambiente protegido</span>
+						</div>
+						<div class="py-7 sm:py-9">
+							<div class="mx-auto flex h-24 w-24 items-center justify-center rounded-[1.7rem] bg-blue-50 ring-8 ring-blue-50/50">
+								<i data-lucide="messages-square" class="h-11 w-11 text-ocean"></i>
+							</div>
+							<p class="mt-6 text-center text-xs font-bold uppercase tracking-[.14em] text-ocean">Um canal de confiança</p>
+							<h2 class="mx-auto mt-2 max-w-sm text-center font-display text-2xl font-extrabold leading-tight text-ink sm:text-3xl">O primeiro passo é poder falar.</h2>
+							<p class="mx-auto mt-3 max-w-sm text-center text-sm leading-6 text-slate-500">Um espaço para registrar relatos e acompanhar o cuidado em cada etapa.</p>
+						</div>
+						<div class="rounded-2xl bg-paper p-4">
+							<div class="flex items-center gap-3">
+								<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-100 text-violet"><i data-lucide="heart-handshake" class="h-5 w-5"></i></span>
+								<div class="min-w-0 flex-1"><p class="text-sm font-bold text-ink">Acolhimento em primeiro lugar</p><p class="mt-0.5 text-xs text-slate-500">Com acompanhamento da equipe escolar</p></div>
+								<i data-lucide="arrow-up-right" class="h-4 w-4 text-slate-400"></i>
+							</div>
+						</div>
+						<div class="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
+							<span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Desenvolvido por</span>
+							<img src="img/Logo_Protecht.png" alt="Protecht" class="h-9 w-9 object-contain">
+						</div>
+					</div>
+					<div class="absolute -bottom-5 -left-4 hidden items-center gap-2 rounded-2xl border border-slate-100 bg-white px-4 py-3 shadow-xl sm:flex">
+						<span class="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700"><i data-lucide="smartphone" class="h-5 w-5"></i></span><span class="text-xs font-bold text-ink">Na escola e no celular</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="sobre" class="scroll-mt-24 bg-white px-5 py-20 sm:px-8 sm:py-28">
+			<div class="mx-auto max-w-7xl">
+				<div class="reveal grid items-center gap-12 lg:grid-cols-[.85fr_1.15fr] lg:gap-20">
+					<div class="relative mx-auto w-full max-w-md">
+						<div class="absolute inset-5 rounded-[2rem] bg-gradient-to-br from-blue-100 to-cyan-100" aria-hidden="true"></div>
+						<div class="relative flex min-h-[330px] items-center justify-center rounded-[2rem] border border-blue-100 bg-white p-8 shadow-xl shadow-blue-950/5">
+							<img src="img/Logo_Safely.png" alt="Logotipo do Safely: escudo e balão de conversa" class="h-64 w-64 max-w-full rounded-[2rem] object-contain">
+							<span class="absolute bottom-5 right-5 inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2 text-xs font-bold text-white"><i data-lucide="shield-check" class="h-4 w-4 text-cyan-300"></i> Mais cuidado, mais conexão</span>
+						</div>
+					</div>
+					<div>
+						<p class="reveal text-xs font-extrabold uppercase tracking-[.16em] text-ocean">O que é o Safely</p>
+						<h2 class="reveal mt-4 max-w-2xl text-3xl font-extrabold leading-tight text-ink sm:text-4xl">Uma conversa organizada pode mudar o caminho de alguém.</h2>
+						<p class="reveal mt-5 max-w-2xl leading-7 text-slate-600">Nem sempre é fácil encontrar espaço para falar sobre bullying ou saber o que acontece depois de um relato. O Safely é um sistema pensado para as Etecs que torna esse caminho mais claro: o estudante pode registrar uma ocorrência com simplicidade, e a equipe escolar pode avaliar e acompanhar cada caso.</p>
+						<div class="reveal mt-7 flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50/70 p-5 sm:p-6">
+							<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-ocean shadow-sm"><i data-lucide="hand-heart" class="h-5 w-5"></i></span>
+							<div><h3 class="font-bold text-ink">Tecnologia como apoio. Pessoas no centro.</h3><p class="mt-2 text-sm leading-6 text-slate-600">Nosso objetivo é potencializar e organizar o trabalho da equipe escolar, e não substituí-lo. O acolhimento e as providências continuam sendo construídos por pessoas.</p></div>
+						</div>
+						<div class="reveal mt-6 flex flex-col gap-4 sm:flex-row sm:gap-8">
+							<div class="flex items-center gap-3"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700"><i data-lucide="monitor-smartphone" class="h-5 w-5"></i></span><div><p class="text-sm font-bold text-ink">Feito para várias telas</p><p class="text-xs text-slate-500">Computador e smartphone</p></div></div>
+							<div class="flex items-center gap-3"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-50 text-violet"><i data-lucide="download" class="h-5 w-5"></i></span><div><p class="text-sm font-bold text-ink">Experiência PWA</p><p class="text-xs text-slate-500">Acesso pela tela inicial</p></div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="funcionalidades" class="scroll-mt-24 bg-paper px-5 py-20 sm:px-8 sm:py-28">
+			<div class="mx-auto max-w-7xl">
+				<div class="reveal flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+					<div><p class="text-xs font-extrabold uppercase tracking-[.16em] text-ocean">Recursos e funcionalidades</p><h2 class="mt-4 max-w-2xl text-3xl font-extrabold leading-tight text-ink sm:text-4xl">Cada etapa mais clara. Cada relato, levado a sério.</h2></div>
+					<p class="max-w-sm text-sm leading-6 text-slate-500">Ferramentas para apoiar a comunicação entre estudantes e equipe escolar, com atenção ao que importa.</p>
+				</div>
+				<div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+					<article class="feature-card reveal rounded-2xl border border-slate-200 bg-white p-6 sm:p-7"><span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-ocean"><i data-lucide="message-circle-heart" class="h-6 w-6"></i></span><p class="mt-6 text-xs font-bold text-ocean">01 / ESTUDANTE</p><h3 class="mt-2 text-lg font-extrabold text-ink">Relato fácil e seguro</h3><p class="mt-2 text-sm leading-6 text-slate-500">Registro simples de ocorrências para facilitar o primeiro passo de quem precisa ser ouvido.</p></article>
+					<article class="feature-card reveal rounded-2xl border border-slate-200 bg-white p-6 sm:p-7" style="transition-delay: 60ms"><span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-700"><i data-lucide="paperclip" class="h-6 w-6"></i></span><p class="mt-6 text-xs font-bold text-cyan-700">02 / CONTEXTO</p><h3 class="mt-2 text-lg font-extrabold text-ink">Anexo de evidências</h3><p class="mt-2 text-sm leading-6 text-slate-500">Possibilidade de incluir evidências digitais para dar contexto ao relato.</p></article>
+					<article class="feature-card reveal rounded-2xl border border-slate-200 bg-white p-6 sm:p-7" style="transition-delay: 120ms"><span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-50 text-violet"><i data-lucide="list-checks" class="h-6 w-6"></i></span><p class="mt-6 text-xs font-bold text-violet">03 / ACOMPANHAMENTO</p><h3 class="mt-2 text-lg font-extrabold text-ink">Acompanhamento transparente</h3><p class="mt-2 text-sm leading-6 text-slate-500">Visualização do status e do andamento da análise ao longo do processo.</p></article>
+					<article class="feature-card reveal rounded-2xl border border-slate-200 bg-white p-6 sm:p-7"><span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-700"><i data-lucide="clipboard-check" class="h-6 w-6"></i></span><p class="mt-6 text-xs font-bold text-indigo-700">04 / EQUIPE ESCOLAR</p><h3 class="mt-2 text-lg font-extrabold text-ink">Gestão para a equipe escolar</h3><p class="mt-2 text-sm leading-6 text-slate-500">Painel para avaliar relatos, acompanhar casos e registrar providências tomadas.</p></article>
+					<article class="feature-card reveal rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 sm:col-span-2 lg:col-span-2"><div class="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between"><div><span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700"><i data-lucide="smartphone" class="h-6 w-6"></i></span><p class="mt-6 text-xs font-bold text-emerald-700">05 / ACESSO</p><h3 class="mt-2 text-lg font-extrabold text-ink">Suporte PWA</h3><p class="mt-2 max-w-lg text-sm leading-6 text-slate-500">Acesse pelo computador ou smartphone e, quando disponível, adicione o Safely à tela inicial para encontrar o sistema com rapidez.</p></div><div class="flex shrink-0 items-center gap-2 rounded-xl bg-paper p-3 text-xs font-bold text-slate-600"><i data-lucide="monitor" class="h-4 w-4 text-ocean"></i> PC <span class="text-slate-300">/</span> <i data-lucide="smartphone" class="h-4 w-4 text-cyan-700"></i> celular</div></div></article>
+				</div>
+			</div>
+		</section>
+
+		<section id="equipe" class="scroll-mt-24 overflow-hidden bg-white px-5 py-20 sm:px-8 sm:py-28">
+			<div class="mx-auto max-w-7xl">
+				<div class="reveal grid items-center gap-9 lg:grid-cols-[.75fr_1.25fr] lg:gap-16">
+					<div class="relative flex min-h-64 items-center justify-center overflow-hidden rounded-[2rem] bg-[#f4effb] p-10">
+						<div class="absolute -right-8 -top-12 h-48 w-48 rounded-full border-[28px] border-violet/10" aria-hidden="true"></div>
+						<img src="img/Logo_Protecht.png" alt="Logotipo da Protecht" class="relative h-44 w-44 object-contain sm:h-52 sm:w-52">
+					</div>
+					<div><p class="text-xs font-extrabold uppercase tracking-[.16em] text-violet">Quem somos</p><h2 class="mt-4 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">Protecht cria. Safely acolhe.</h2><p class="mt-5 max-w-2xl leading-7 text-slate-600"><strong class="font-bold text-violet">Protecht</strong> é a equipe desenvolvedora por trás do projeto. <strong class="font-bold text-ocean">Safely</strong> é o produto: um sistema pensado para apoiar o registro e o acompanhamento de relatos de bullying no contexto das Etecs. Juntos, tecnologia e cuidado podem abrir caminhos para uma escola mais acolhedora.</p></div>
+				</div>
+				<div class="mt-12 flex items-end justify-between gap-4"><div><p class="text-xs font-extrabold uppercase tracking-[.16em] text-slate-400">A equipe do projeto</p><h3 class="mt-2 font-display text-xl font-extrabold text-ink">Feito por pessoas, para pessoas.</h3></div><span class="hidden text-sm text-slate-400 sm:block">Protecht · Projeto de TCC</span></div>
+				<div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+					<article class="team-card reveal rounded-2xl border border-slate-200 bg-white p-5"><div class="flex items-center justify-between"><span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 font-display text-sm font-extrabold text-ocean">JD</span><span class="text-xs font-bold text-slate-300">01</span></div><h3 class="mt-5 text-base font-extrabold leading-snug text-ink">Jorge Luiz Rodrigues Dias</h3><p class="mt-1 text-xs font-medium text-slate-500">Equipe Protecht</p></article>
+					<article class="team-card reveal rounded-2xl border border-slate-200 bg-white p-5" style="transition-delay: 60ms"><div class="flex items-center justify-between"><span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-50 font-display text-sm font-extrabold text-violet">VP</span><span class="text-xs font-bold text-slate-300">02</span></div><h3 class="mt-5 text-base font-extrabold leading-snug text-ink">Vitor Hugo Canata Pinotti</h3><p class="mt-1 text-xs font-medium text-slate-500">Equipe Protecht</p></article>
+					<article class="team-card reveal rounded-2xl border border-slate-200 bg-white p-5" style="transition-delay: 120ms"><div class="flex items-center justify-between"><span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 font-display text-sm font-extrabold text-cyan-700">VM</span><span class="text-xs font-bold text-slate-300">03</span></div><h3 class="mt-5 text-base font-extrabold leading-snug text-ink">Valentina de Oliveira Mendes</h3><p class="mt-1 text-xs font-medium text-slate-500">Equipe Protecht</p></article>
+					<article class="team-card reveal rounded-2xl border border-slate-200 bg-white p-5" style="transition-delay: 180ms"><div class="flex items-center justify-between"><span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-50 font-display text-sm font-extrabold text-indigo-700">LS</span><span class="text-xs font-bold text-slate-300">04</span></div><h3 class="mt-5 text-base font-extrabold leading-snug text-ink">Lara Lavinia Harder da Silva</h3><p class="mt-1 text-xs font-medium text-slate-500">Equipe Protecht</p></article>
+				</div>
+			</div>
+		</section>
+
+		<section id="contato" class="scroll-mt-24 bg-ink px-5 py-20 text-white sm:px-8 sm:py-28">
+			<div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-20">
+				<div class="reveal">
+					<p class="text-xs font-extrabold uppercase tracking-[.16em] text-cyan-300">Contato</p>
+					<h2 class="mt-4 max-w-lg text-3xl font-extrabold leading-tight sm:text-4xl">Vamos conversar sobre uma escola mais acolhedora?</h2>
+					<p class="mt-5 max-w-md leading-7 text-slate-300">Dúvidas, ideias ou interesse no projeto? A equipe Protecht está à disposição.</p>
+					<div class="mt-8 rounded-2xl border border-white/10 bg-white/[.06] p-5 sm:p-6">
+						<p class="text-xs font-bold uppercase tracking-wider text-slate-400">E-mail oficial</p>
+						<div class="mt-3 flex flex-wrap items-center gap-3">
+							<a class="focus-ring break-all text-lg font-bold text-white hover:text-cyan-300" href="mailto:protechttcc@gmail.com">protechttcc@gmail.com</a>
+							<button id="copy-email" class="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 text-slate-200 transition hover:bg-white/10" type="button" aria-label="Copiar e-mail" title="Copiar e-mail"><i data-lucide="copy" class="h-4 w-4"></i></button>
+						</div>
+						<p id="copy-status" class="mt-2 min-h-5 text-xs text-cyan-300" aria-live="polite"></p>
+					</div>
+				</div>
+				<form id="contact-form" class="reveal rounded-[1.5rem] border border-white/10 bg-white p-6 text-ink shadow-2xl shadow-black/10 sm:p-8" style="transition-delay: 100ms">
+					<h3 class="text-xl font-extrabold">Envie uma mensagem</h3>
+					<p class="mt-2 text-sm text-slate-500">O envio abrirá seu aplicativo de e-mail com a mensagem preenchida.</p>
+					<label class="mt-6 block text-sm font-bold text-ink" for="name">Seu nome</label>
+					<input class="focus-ring mt-2 min-h-12 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm outline-none transition focus:border-ocean focus:bg-white" id="name" name="name" type="text" autocomplete="name" placeholder="Como podemos chamar você?" required>
+					<label class="mt-4 block text-sm font-bold text-ink" for="email">Seu e-mail</label>
+					<input class="focus-ring mt-2 min-h-12 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm outline-none transition focus:border-ocean focus:bg-white" id="email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+					<label class="mt-4 block text-sm font-bold text-ink" for="message">Mensagem</label>
+					<textarea class="focus-ring mt-2 min-h-32 w-full resize-y rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-ocean focus:bg-white" id="message" name="message" placeholder="Escreva sua mensagem..." required></textarea>
+					<button class="focus-ring mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-ocean px-6 py-3 text-sm font-bold text-white transition hover:bg-blue-700" type="submit">Preparar e-mail <i data-lucide="send" class="h-4 w-4"></i></button>
+				</form>
+			</div>
+		</section>
+	</main>
+
+	<footer class="bg-[#0b1b30] px-5 py-7 text-white sm:px-8">
+		<div class="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+			<div class="flex items-center gap-3">
+				<img src="img/Logo_Protecht.png" alt="Protecht" class="h-10 w-10 object-contain">
+				<span class="h-7 w-px bg-white/20" aria-hidden="true"></span>
+				<img src="img/Logo_Safely.png" alt="Safely" class="h-10 w-10 rounded-lg bg-white object-contain">
+				<div class="ml-1"><p class="text-sm font-bold">Protecht <span class="font-normal text-slate-400">&middot; Safely</span></p><p class="mt-0.5 text-xs text-slate-400">Tecnologia com cuidado e propósito.</p></div>
+			</div>
+			<div class="text-xs leading-6 text-slate-400 sm:text-right"><p>&copy; <span id="current-year"></span> Protecht. Todos os direitos reservados.</p><a class="focus-ring rounded text-slate-300 hover:text-cyan-300" href="mailto:protechttcc@gmail.com">protechttcc@gmail.com</a></div>
+		</div>
+	</footer>
+
+	<script>
+		lucide.createIcons();
+
+		const menuToggle = document.getElementById('menu-toggle');
+		const navLinks = document.getElementById('nav-links');
+
+		menuToggle.addEventListener('click', () => {
+			const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+			menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+			menuToggle.setAttribute('aria-label', isExpanded ? 'Abrir menu' : 'Fechar menu');
+			navLinks.classList.toggle('hidden', isExpanded);
+		});
+
+		navLinks.querySelectorAll('.nav-link').forEach((link) => {
+			link.addEventListener('click', () => {
+				navLinks.classList.add('hidden');
+				menuToggle.setAttribute('aria-expanded', 'false');
+				menuToggle.setAttribute('aria-label', 'Abrir menu');
+			});
+		});
+
+		const revealObserver = new IntersectionObserver((entries, observer) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('is-visible');
+					observer.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.12 });
+
+		document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+
+		document.getElementById('current-year').textContent = new Date().getFullYear();
+
+		document.getElementById('copy-email').addEventListener('click', async () => {
+			const status = document.getElementById('copy-status');
+			try {
+				await navigator.clipboard.writeText('protechttcc@gmail.com');
+				status.textContent = 'E-mail copiado.';
+			} catch {
+				status.textContent = 'Não foi possível copiar. Selecione o e-mail para copiá-lo.';
+			}
+		});
+
+		document.getElementById('contact-form').addEventListener('submit', (event) => {
+			event.preventDefault();
+			const formData = new FormData(event.currentTarget);
+			const subject = `Contato pelo site Safely - ${formData.get('name')}`;
+			const body = `Nome: ${formData.get('name')}\nE-mail: ${formData.get('email')}\n\nMensagem:\n${formData.get('message')}`;
+			window.location.href = `mailto:protechttcc@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+		});
+	</script>
+</body>
+</html>
